@@ -1,20 +1,3 @@
-#Welcome to my R code. It is a self sustaining code, so new data can be added to the 
-#bruv data set and the code can be run and it will take the new data and incorporate it
-#If there are issues with code (any error messages, data not meeting the assumptions of 
-#normality) please contact me, and i will fix the code myself, please don't fiddle with
-#my code. I worked really hard on her and she is a bit confusing and i dont want anything
-#to stop working
-#on the otherhand if you feel like some of the stats are wrong or should be changed
-#i would love to discuss this with you, so send me an email
-
-# i have annotated my code a bit, there will be some places you need to fill in things so it will run on your
-#computer, so make sure you give it a read
-
-#i hope it runs smoothly for you
-
-#to contact me: my name is Dominique Maucieri
-#you can look me up on social media or my email is dominiquemaucieri@gmail.com
-
 #This line of code will clear any presaved settings that might interfere with how my code runs
 rm(list=ls(all=T))
 #This line of code will clear any saved plots so you start nice and fresh
