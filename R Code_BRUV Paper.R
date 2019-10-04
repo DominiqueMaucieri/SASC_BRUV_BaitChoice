@@ -6,7 +6,7 @@ dev.off()
 #in order to run this code, you need to set your working directory first. To do this
 #you need to add in the pathway to find the location you have the excel sheet stored
 #For me, I have the datasheet saved in a folder in my documents so my pathway is:
-#setwd("~/Dropbox/Documents/Research/SASC/BRUV Paper")
+#setwd("~/Dropbox/Documents/Research/SASC/BRUV_Paper/SASC_BRUV_BaitChoice")
 
 setwd("PUT YOUR PATHWAY HERE WITHIN THE QUOTATIONS")
 
