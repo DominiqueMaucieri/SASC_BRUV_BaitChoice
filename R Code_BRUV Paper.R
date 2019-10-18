@@ -31,6 +31,7 @@ install.packages("lme4")
 install.packages("emmeans")
 install.packages("tidyr")
 install.packages("car")
+install.packages("cowplot")
 
 ###### Packages and Data ######
 #now you have to run all the packages so they will be active during this R session
@@ -51,6 +52,7 @@ library(lme4)
 library(emmeans)
 library(tidyr)
 library(car)
+library(cowplot)
 
 #This will load the data that will be used for the entire data analysis
 #Yes Aaron i am only using one data sheet
@@ -333,7 +335,7 @@ ClassSumm$Class <- ClassLevels
 as.factor(ClassAbund$Bait)
 #Make a folder within your current working directory to put some txt files in
 #change the working directory location to where it is on your computer
-#setwd("~/Dropbox/Documents/Research/SASC/BRUV Paper/ClassData")
+#setwd("~/Dropbox/Documents/Research/SASC/BRUV_Paper/SASC_BRUV_BaitChoice/ClassData")
 
 setwd("PATHWAY FOR A FOLDER INSIDE MAIN WORKING DIRECTORY HERE")
 
@@ -418,7 +420,7 @@ ClassPlot
 
 ###### Species Counts ######
 #Back to the original pathway so my pathway is:
-#setwd("~/Documents/Documents/Research/SASC/BRUV Paper")
+#setwd("~/Dropbox/Documents/Research/SASC/BRUV_Paper/SASC_BRUV_BaitChoice")
 setwd("PUT YOUR PATHWAY HERE WITHIN THE QUOTATIONS")
 
 ClassAbund
@@ -478,7 +480,6 @@ DepthCor <- ggplot(data = CORDATA, aes(x = Depth, y = MaxN)) +
   labs(x="Depth (m)", y="Abundance (# of organisms)", title="", colour="", size=2) +
   theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), 
                      axis.title=element_text(size=16, face="bold") , axis.line = element_line(colour = "black"), axis.text = element_text(size=12), legend.title = element_text(size=16, face="bold")) 
-DepthCor
 
 cor.test(CORDATA$Temp,CORDATA$MaxN, method="pearson")
 #t = 2.0226, df = 12, p-value = 0.06598
@@ -487,11 +488,9 @@ cor.test(CORDATA$Temp,CORDATA$MaxN, method="pearson")
 TempCor <- ggplot(data = CORDATA, aes(x = Vis, y = MaxN)) + 
   geom_point(color='black') +
   geom_smooth(method = "lm", se = TRUE)+
-  labs(x="Temperature (°C)", y="Abundance (# of organisms)", title="", colour="", size=2) +
+  labs(x="Temperature (°C)", y="", title="", colour="", size=2) +
   theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), 
                      axis.title=element_text(size=16, face="bold") , axis.line = element_line(colour = "black"), axis.text = element_text(size=12), legend.title = element_text(size=16, face="bold")) 
-TempCor
-
 
 cor.test(CORDATA$Vis,CORDATA$MaxN, method="pearson")
 #t = 1.0004, df = 12, p-value = 0.3369
@@ -500,11 +499,14 @@ cor.test(CORDATA$Vis,CORDATA$MaxN, method="pearson")
 VisCor <- ggplot(data = CORDATA, aes(x = Vis, y = MaxN)) + 
           geom_point(color='black') +
           geom_smooth(method = "lm", se = TRUE)+
-          labs(x="Visibility (m)", y="Abundance (# of organisms)", title="", colour="", size=2) +
+          labs(x="Visibility (m)", y="", title="", colour="", size=2) +
           theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), 
           axis.title=element_text(size=16, face="bold") , axis.line = element_line(colour = "black"), axis.text = element_text(size=12), legend.title = element_text(size=16, face="bold")) 
-VisCor
 
-
-
-
+cor.plots <- plot_grid(DepthCor,
+          TempCor,
+          VisCor,
+          labels = c('(A)','(B)', '(C)'),
+          label_x = 0.2,
+          ncol = 3)
+cor.plots
