@@ -1,4 +1,4 @@
-# SASC_BRUV_BaitChoice
+# SASC BRUV BaitChoice
 
 This R script and data is in collaboration with the South African Shark Conservancy (https://www.sharkconservancy.org/) and invistigates the effect of various bait types on community assemblages recorded on baited remote underwater video (BRUV) systems.
 
