@@ -10,4 +10,5 @@ I have annotated my code a bit, there will be some places you need to fill in th
 I hope it runs smoothly for you
 
 To contact me: my name is Dominique Maucieri
+
 You can look me up on social media or my email is dominiquemaucieri@gmail.com
